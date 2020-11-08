@@ -21,7 +21,7 @@ func TestCompareArray(t *testing.T) {
 }
 
 func TestBitClear(t *testing.T) {
-	a := 7 // 0111
+	a := 7 // 二进制 0111
 	a = a &^ Readable
 	t.Log(a)
 }
