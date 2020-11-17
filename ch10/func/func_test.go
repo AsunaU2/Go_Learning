@@ -50,3 +50,36 @@ func TestFn(t *testing.T) {
 	tsSF := timeSpent(slowFun)
 	t.Log(tsSF(10))
 }
+
+/*
+可变长参数
+*/
+func Sum(ops ...int) int {
+	ret := 0
+	for _, op := range ops {
+		ret += op
+	}
+	return ret
+}
+
+func TestVarParam(t *testing.T) {
+	t.Log(Sum(1, 2, 3, 4))
+	t.Log(Sum(1, 2, 3, 4, 5, 6))
+}
+
+/*
+defer函数
+1. 在函数返回前延迟执行
+2. 主要用于资源回收，相当于python的异常处理的finally
+3. 即使panic中断函数，也仍然会执行
+*/
+
+func Clear() {
+	fmt.Println("Clear resources.")
+}
+
+func TestDefer(t *testing.T) {
+	defer Clear()
+	fmt.Println("Start")
+	panic("err")
+}
