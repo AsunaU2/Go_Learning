@@ -8,5 +8,7 @@ import (
 func main() {
 	if len(os.Args) > 1 {
 		fmt.Println("Hello world!", os.Args[1])
+	} else {
+		fmt.Println("Hello C")
 	}
 }
