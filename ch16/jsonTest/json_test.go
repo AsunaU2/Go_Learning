@@ -72,5 +72,5 @@ func TestJson(t *testing.T) {
 	if err != nil {
 		t.Logf("Error, json Unmarshal failed: %s", err)
 	}
-	t.Logf("\n部分结构体反: %v", OutputType)
+	t.Logf("\n部分结构体反序列化: %v", OutputType)
 }
